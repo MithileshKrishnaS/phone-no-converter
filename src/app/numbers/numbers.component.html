@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="whole">
+        <h1>Phone Number Converter</h1>
+        <label for="number">Enter number : </label>
+        <input list="conutrycode" [(ngModel)]="cc" id="cc">
+        <datalist id="conutrycode">
+            <option *ngFor="let n of numbers " >+{{n}}</option>
+        </datalist> 
+        <input type="text" [(ngModel)]="pno" id="pno"><br><br>
+        <input type="submit" value="convert" (click)=get() id="submit" ><br><br>
+        <div *ngIf="isClicked">{{pno| pipes:cc}}</div>
+    </div>
+</body>
+</html>
